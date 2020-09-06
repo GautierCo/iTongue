@@ -1,0 +1,71 @@
+/* Conversations */
+@import "../../../styles/vars";
+
+.conversations {
+    //padding-top: 2em;
+
+    .conversation{
+        width: 100%;
+        background-color: #ffffff;
+        border-bottom: 1px solid #f9ecec;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        padding: .8em .7em;
+
+        &_avatar__container {
+            position: relative;
+            
+            .ui.label {
+                background-color: $primary-color !important;
+                border: none !important;
+            }
+        }
+
+        &-unread {
+            position: absolute;
+            top: 41px;
+            left: 31px;
+
+        }
+
+        &-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        &_container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &_content {
+            padding: .2em;
+        }
+
+        &-name {
+            font-weight: 600;
+            font-size: 1em;
+        }
+
+        &-text {
+            font-size: 0.9em;
+        }
+
+        &-sendicon {
+            font-size: 1.4em!important;
+        }
+
+        &-date {
+            font-size: .7em;
+        }
+    }
+
+    .conversation.active{
+        background-color: $shape-color;
+    }
+}

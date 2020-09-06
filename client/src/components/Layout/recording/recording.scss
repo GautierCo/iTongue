@@ -1,0 +1,99 @@
+@import "../../../styles/vars";
+@import "../../../styles/mixin";
+
+/*
+.recording-selecting {
+    //top: -319px;
+}
+
+.recording-copy {
+    //top: -85px;
+}
+
+.recording-copy-sameLanguageExpression {
+    //top: -43px;
+}
+*/
+
+.ui.card#recording-widget,
+.ui.cards > .card {
+  box-shadow: none !important;
+}
+
+#recording-widget {
+  // background-color: #ccc !important;
+  position: fixed !important;
+  bottom: 50px;
+  width: 370px !important;
+  width: 100vw !important;
+
+  .container-dropdown {
+    min-height: 333px;
+    height: 333px;
+    overflow-y: scroll;
+  }
+
+  .recording-widget {
+    &__closeIcon {
+      display: flex;
+      justify-content: center;
+
+      &_item {
+        position: relative;
+        top: -13px !important;
+        padding: 5px;
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 20px;
+        color: #fff !important;
+        background-color: $primary-color !important;
+        cursor: pointer;
+      }
+    }
+
+    &__save-btn {
+      // height: 30px;
+      // width: 100px;
+      background-color: blue !important;
+      @include button;
+    }
+
+    &__text-selected {
+      margin-left: 100px;
+      padding: 8px;
+      font-size: 1.1em;
+
+      &-text {
+        display: inline-block;
+        &::first-letter {
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+
+  .flag_image {
+    display: block;
+    padding: 0.3em;
+    background-color: #ffffff;
+    margin-right: 0.3em;
+    max-width: 30px;
+    max-height: 30px;
+    border-radius: 50%;
+  }
+
+  .separator {
+    border: 1px solid rgba(0, 0, 0, 0.116);
+    width: 56%;
+    // display: block;
+    margin: 0.5em 0 0;
+  }
+
+  button.ui.button.recording-widget__save-btn {
+    @include button;
+  }
+  button.ui.button.recording-widget__cancel-btn {
+    border: 1px solid $primary-color !important;
+    color: $primary-color !important;
+  }
+}

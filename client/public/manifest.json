@@ -1,0 +1,9 @@
+{
+  "short_name": "iTongue",
+  "name": "iTongue",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#fe734c",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary"
+}

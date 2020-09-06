@@ -1,0 +1,28 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixin';
+
+.login-admin {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-color;
+
+    &_container {
+        
+        width: 300px;
+
+        .ui.header {
+            display: block;
+            text-align: center;
+            margin: 1em auto;
+        }
+
+        .ui.button {
+            display: block;
+            margin: 0 auto;
+            @include button;
+        }
+    }
+}

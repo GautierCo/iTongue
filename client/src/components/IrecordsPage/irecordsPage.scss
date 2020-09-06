@@ -1,0 +1,18 @@
+@import "../../styles/vars";
+@import "../../styles/mixin";
+
+.irecordsPage {
+    margin: 1em;
+
+    .title {
+        margin: 20px 0 !important;
+    }
+}
+
+.search-content--items {
+    @include flex-column;
+    align-items: center;
+    h1 {
+        margin: 20px 0 !important;
+    }
+}

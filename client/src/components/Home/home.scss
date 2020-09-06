@@ -1,0 +1,91 @@
+@import "../../styles/vars";
+
+.homePage {
+    padding: 10px;
+    // font-weight: 700;
+    color: $primary-text-color;
+    // overflow-x: hidden !important;
+
+    &-carousel__dots {
+        position: relative;
+        top: -26px;
+        left: 130px;
+    }
+
+    img {
+        width: 100%;
+    }
+    p {
+        margin: 0;
+        font-weight: 300;
+    }
+
+    &-header {
+        padding-bottom: 2px !important;
+        border-bottom: 1px solid black !important;
+        width: fit-content;
+        margin-bottom: 20px !important;
+    }
+    .users {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        height: 70px;
+        margin-bottom: 10px;
+
+        &-avatar {
+            width: 40px;
+            margin: 0 10px 0 10px !important;
+        }
+
+        &-country {
+            margin-left: auto;
+            margin-right: 20px;
+        }
+    }
+
+    .home-translations {
+        display: flex;
+        background-color: $background-color;
+        margin-bottom: 10px;
+        padding: 10px;
+
+        align-items: center;
+        .flag_image {
+            display: block;
+            padding: 0.3em;
+            background-color: #ffffff;
+            margin-right: 0.3em;
+            max-width: 30px;
+            max-height: 30px;
+            border-radius: 50%;
+        }
+
+        &__irecords {
+            font-size: 0.9em;
+            margin-left: auto;
+            // color: $border-color;
+            // color: $background-color;
+        }
+    }
+
+    .popular {
+        &_container {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+        }
+
+        &__name {
+            text-transform: capitalize;
+        }
+
+        &__irecords {
+            font-weight: normal !important;
+        }
+    }
+
+    .ui.image {
+        max-width: 35px;
+    }
+}

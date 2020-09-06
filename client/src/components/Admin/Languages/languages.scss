@@ -1,0 +1,15 @@
+@import '../../../styles/vars';
+
+.languages {
+    background-color: $background-color;
+    width: 100%;
+    height: 90vh;
+    padding-top: 5em;
+    .segment {
+        margin: 0 auto;
+        border-radius: 12px;
+        background-color: $shape-color;
+        border: 0;
+    }
+}
+

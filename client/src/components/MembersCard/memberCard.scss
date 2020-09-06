@@ -1,0 +1,52 @@
+@import "../../styles/vars";
+.member-card {
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    background-color: $background-color;
+    color: $primary-text-color;
+    padding: 8px 0;
+    border-top: 1px solid #f9ecec;
+
+    &_left {
+        width: 100%;
+    }
+
+    &_right {
+        width: 180px;
+        margin-right: 3px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .fullname {
+        margin-bottom: 0;
+        font-size: 1.2em!important;
+    }
+
+    .avatar {
+        margin-left: 10px;
+    }
+
+    .records {
+        font-weight: 300;
+        font-size: 0.9em;
+        color: hsl(180, 29%, 50%);
+    }
+
+    .ui.floated.image {
+        margin-bottom: 0 !important;
+        margin-top: 0.2em !important;
+    }
+}
+
+.membercard_flag_image {
+    display: block;
+    padding: 0.3em;
+    background-color: #ffffff;
+    max-width: 32px!important;
+    max-height: 35px;
+    border-radius: 50%;
+  }

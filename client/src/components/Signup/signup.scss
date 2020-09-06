@@ -1,0 +1,29 @@
+@import "../../styles/vars";
+@import "../../styles/mixin";
+
+.signup {
+    margin-top: 2em;
+
+    &-title {
+        margin-bottom: 10px;
+    }
+
+    &-link {
+        color: $primary-text-color;
+        transition: color 0.25s;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+
+    &-button {
+        @include flex-column;
+        align-items: center;
+        &--item {
+            margin-top: 3em !important;
+            margin-bottom: $margin !important;
+            @include button;
+        }
+    }
+}

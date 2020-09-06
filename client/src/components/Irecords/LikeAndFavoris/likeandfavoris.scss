@@ -1,0 +1,17 @@
+@import "../../../styles/vars";
+
+.likeandfavoris {
+    display: flex;
+
+    .favoris {
+        margin-left: 10px;
+    }
+
+    .favoris.isFavorite {
+        color: $primary-color;
+    }
+
+    .likes.isFavorite {
+        color: $primary-color;
+    }
+}

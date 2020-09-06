@@ -1,0 +1,21 @@
+@import "../../styles/vars";
+
+
+
+.usersPage {
+    
+    .member-card {
+        padding: .5em .6em;
+    }
+    
+    .title {
+        margin: 20px 1em !important;
+        font-weight: 700;
+        font-size: 2rem;
+    }
+
+    a:first-child .member-card {
+        border-top: none!important;
+    }
+}
+

@@ -1,0 +1,29 @@
+/* Mixin */
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin flex-alignCenter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flex-spaceEvenly {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+@mixin button {
+    background-color: $primary-color !important;
+    color: $background-items !important;
+    transition: all 0.25s !important;
+    &:hover,
+    :active {
+        background-color: darken($color: $primary-color, $amount: 4) !important;
+    }
+}

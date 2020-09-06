@@ -1,0 +1,643 @@
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/PrimaryKey"
+        email:
+          type: string
+          format: email
+        firstname:
+          $ref: "#/components/schemas/Firstname"
+        lastname:
+          $ref: "#/components/schemas/Lastname"
+        bio:
+          type: string
+          example: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla turpis venenatis, ultrices felis quis, consectetur purus cras amet.
+          maxLength: 140
+        slug:
+          $ref: "#/components/schemas/Slug"
+        avatarUrl:
+          $ref: "#/components/schemas/URL"
+        isAdmin:
+          type: boolean
+        createdAt:
+          $ref: "#/components/schemas/DateTZ"
+        records:
+          type: array
+          items:
+            $ref: "#/components/schemas/UserRecord"
+        learnedLanguages:
+          $ref: "#/components/schemas/Languages"
+        taughtLanguages:
+          $ref: "#/components/schemas/Languages"
+        followers:
+          type: array
+          items:
+            $ref: "#components/schemas/PlainUser"
+        followed:
+          type: array
+          items:
+            $ref: "#components/schemas/PlainUser"
+
+    UpdatedUser:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        firstname:
+          $ref: "#/components/schemas/Firstname"
+        lastname:
+          $ref: "#/components/schemas/Lastname"
+        password:
+          $ref: "#/components/schemas/Password"
+        confirm:
+          $ref: "#/components/schemas/Password"
+        bio:
+          type: string
+          example: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla turpis venenatis, ultrices felis quis, consectetur purus cras amet.
+          maxLength: 140
+        learnedLanguages:
+          $ref: "#/components/schemas/Languages"
+        taughtLanguages:
+          $ref: "#/components/schemas/Languages"
+
+    NewUser:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          $ref: "#/components/schemas/Password"
+        confirm:
+          $ref: "#/components/schemas/Password"
+        firstname:
+          $ref: "#/components/schemas/Firstname"
+        lastname:
+          $ref: "#/components/schemas/Lastname"
+      required:
+        - email
+        - password
+        - confirm
+
+    RecordUser:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/PrimaryKey"
+        firstname:
+          $ref: "#/components/schemas/Firstname"
+        lastname:
+          $ref: "#/components/schemas/Lastname"
+        slug:
+          $ref: "#/components/schemas/Slug"
+        avatarUrl:
+          $ref: "#/components/schemas/URL"
+
+    UsersFollow:
+      allOf:
+        - $ref: "#/components/schemas/RecordUser"
+        - type: object
+          properties:
+            createdAt:
+              $ref: "#/components/schemas/DateTZ"
+
+    PlainUser:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/PrimaryKey"
+        email:
+          type: string
+          format: email
+        firstname:
+          $ref: "#/components/schemas/Firstname"
+        lastname:
+          $ref: "#/components/schemas/Lastname"
+        slug:
+          $ref: "#/components/schemas/Slug"
+        avatarUrl:
+          $ref: "#/components/schemas/URL"
+        createdAt:
+          $ref: "#/components/schemas/DateTZ"
+
+    LoginForm:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          $ref: "#/components/schemas/Password"
+      required:
+        - email
+        - password
+
+    UserRecord:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/PrimaryKey"
+        url:
+          $ref: "#/components/schemas/URL"
+        createdAt:
+          $ref: "#/components/schemas/DateTZ"
+        englishTranslation:
+          $ref: "#/components/schemas/Translation"
+        translation:
+          $ref: "#/components/schemas/Translation"
+        likeCount:
+          type: integer
+          example: 18
+        bookmarkCount:
+          type: integer
+          example: 32
+        commentCount:
+          type: integer
+          example: 8
+
+    Records:
+      type: array
+      items:
+        $ref: "#/components/schemas/Record"
+
+    Record:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/PrimaryKey"
+        url:
+          $ref: "#/components/schemas/URL"
+        createdAt:
+          $ref: "#/components/schemas/DateTZ"
+        user:
+          $ref: "#/components/schemas/RecordUser"
+        englishTranslation:
+          $ref: "#/components/schemas/Translation"
+        translation:
+          $ref: "#/components/schemas/Translation"
+        likeCount:
+          type: integer
+          example: 18
+        bookmarkCount:
+          type: integer
+          example: 32
+        commentCount:
+          type: integer
+          example: 8
+
+    DashboardRecord:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/PrimaryKey"
+        url:
+          $ref: "#/components/schemas/URL"
+        createdAt:
+          $ref: "#/components/schemas/DateTZ"
+        user:
+          $ref: "#/components/schemas/DashboardUser"
+        translation:
+          $ref: "#/components/schemas/DashboardTranslation"
+
+    Languages:
+      type: array
+      items:
+        $ref: "#/components/schemas/Language"
+      description: An array of languages.
+
+    Language:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/PrimaryKey"
+        name:
+          type: string
+          example: english
+        code:
+          $ref: "#/components/schemas/CountryCode"
+
+    NewLanguage:
+      type: object
+      properties:
+        name:
+          type: string
+          example: english
+        code:
+          type: string
+          example: en_US
+          pattern: "(^[a-z]{2}$)|(^[a-z]{2}_[A-Z]{2}$)"
+          description: Must be [en] or [en_US] format
+
+    NewExpression:
+      type: object
+      properties:
+        label:
+          type: string
+          example: bjr
+      required:
+        - label
+
+    Comment:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/PrimaryKey"
+        text:
+          type: string
+        user:
+          $ref: "#/components/schemas/RecordUser"
+        createdAt:
+          $ref: "#/components/schemas/DateTZ"
+
+    Comments:
+      type: array
+      items:
+        $ref: "#/components/schemas/Comment"
+
+    UserLanguage:
+      type: object
+      properties:
+        language_id:
+          $ref: "#/components/schemas/LanguagePk"
+        role:
+          type: string
+          enum: [learner, teacher]
+          description: Indicates the type of language, i.e. a learned or a taught one.
+      required:
+        - language_id
+        - role
+
+    Translation:
+      type: object
+      properties:
+        id:
+          $ref: "#components/schemas/PrimaryKey"
+        text:
+          type: string
+          example: How are you ?
+        createdAt:
+          $ref: "#/components/schemas/DateTZ"
+        expression:
+          $ref: "#/components/schemas/Expression"
+        language:
+          $ref: "#/components/schemas/Language"
+
+    DashboardTranslation:
+      type: object
+      properties:
+        id:
+          $ref: "#components/schemas/PrimaryKey"
+        text:
+          type: string
+          example: How are you ?
+        languageName:
+          type: string
+          example: english
+        languageCode:
+          $ref: "#/components/schemas/CountryCode"
+        expressionId:
+          $ref: "#/components/schemas/PrimaryKey"
+
+    Expression:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/PrimaryKey"
+        label:
+          type: string
+          example: "greetings"
+        createdAt:
+          $ref: "#/components/schemas/DateTZ"
+
+    URL:
+      type: string
+      format: uri
+      example: /c/0/f/6/sdfesse55ad54uom8da
+
+    DateTZ:
+      type: string
+      format: date-time
+
+    PrimaryKey:
+      type: integer
+      minimum: 1
+      example: 24
+
+    TranslationPk:
+      allOf:
+        - "#/components/schemas/PrimaryKey"
+        - description: The primary key of the recorded translation.
+
+    LanguagePk:
+      allOf:
+        - "#/components/schemas/PrimaryKey"
+        - description: The primary key of the language.
+
+    Firstname:
+      type: string
+      example: Michael
+
+    Lastname:
+      type: string
+      example: Rapaport
+
+    Password:
+      type: string
+      example: mySecuredPa$$word
+      format: password
+
+    Slug:
+      type: string
+      example: michael-rapaport24
+      pattern: '[a-z\d]+(-[a-z\d])*'
+
+    JWT:
+      type: string
+      example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+      format: JWT
+
+    CountryCode:
+      type: string
+      example: en
+      pattern: "[a-z]{2,4}"
+
+    Errors:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: "#/components/schemas/Error"
+
+    Error:
+      type: object
+      properties:
+        msg:
+          type: string
+          example: An error has occured
+
+    ID:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 24
+
+    Updated:
+      type: object
+      properties:
+        updated:
+          type: boolean
+          example: true
+
+    Deleted:
+      type: object
+      properties:
+        deleted:
+          type: boolean
+          example: true
+
+    BestUsers:
+      type: array
+      items:
+        $ref: "#/components/schemas/BestUser"
+
+    BestUser:
+      type: object
+      properties:
+        userId:
+          type: integer
+          example: 3
+        slug:
+          type: string
+          example: /jhon-doe
+        firstname:
+          type: string
+          example: Jhon
+        lastname:
+          type: string
+          example: Doe
+        avatarUrl:
+          type: string
+          example: /thumnails/jhon-doe.jpg
+        languageMostTaught:
+          type: object
+          properties:
+            language:
+              type: string
+              example: french
+            code:
+              type: string
+              example: fr
+            occurrences:
+              type: integer
+              example: 8
+        iRecords:
+          type: integer
+          example: 33
+          description: number of iRecords for this user
+      example:
+        userId: 1,
+        slug: "jhon-doe"
+        firstname: "Jhon"
+        lastname: "Doe"
+        languageMostTaught:
+          language: french
+          code: fr
+          occurrences: 6
+        avatarUrl: "/thumnails/jhon-doe.jpg"
+        iRecords: 33
+
+    BestTranslations:
+      type: array
+      items:
+        $ref: "#/components/schemas/BestTranslation"
+
+    BestTranslation:
+      type: object
+      properties:
+        translationId:
+          type: integer
+          example: 3
+        text:
+          type: string
+          example: Hellow world
+        language:
+          type: string
+          example: en_EN
+        expression:
+          type: string
+          example: hello
+        expressionId:
+          type: integer
+          example: 47
+        iRecords:
+          type: integer
+          example: 357
+          description: number of iRecords for this user
+      example:
+        translationId: 3
+        text: Hellow world
+        language: en_EN
+        expression: hello
+        expressionId: 47
+        iRecord: 357
+
+  parameters:
+    ExpressionID:
+      in: path
+      name: id
+      schema:
+        $ref: "#/components/schemas/PrimaryKey"
+      required: true
+      description: Primary key of the expression.
+
+    TranslationID:
+      in: path
+      name: id
+      schema:
+        $ref: "#/components/schemas/PrimaryKey"
+      required: true
+      description: Primary key of the translation.
+
+    UserPk:
+      in: path
+      name: id
+      schema:
+        $ref: "#components/schemas/PrimaryKey"
+      required: true
+      description: Primary key of the user.
+
+    LanguagePk:
+      in: path
+      name: language_id
+      schema:
+        $ref: "#/components/schemas/LanguagePk"
+      required: true
+      description: Primary key of the language.
+
+    LanguageID:
+      in: path
+      name: id
+      schema:
+        $ref: "#/components/schemas/PrimaryKey"
+      required: true
+      description: Primary key of the language.
+
+    RecordID:
+      in: path
+      name: id
+      schema:
+        $ref: "#/components/schemas/PrimaryKey"
+      required: true
+      description: Primary key of the record
+
+    CommentID:
+      in: path
+      name: id
+      schema:
+        $ref: "#/components/schemas/PrimaryKey"
+      required: true
+      description: Primary key of the comment.
+
+    CommentText:
+      in: body
+      name: text
+      schema:
+        type: object
+        properties:
+          text:
+            type: srting
+            example: J'adore la prononciation !
+      required:
+        - text
+
+    RecordPk:
+      in: path
+      name: language_id
+      schema:
+        $ref: "#/components/schemas/PrimaryKey"
+      required: true
+      description: Primary key of the record.
+
+  responses:
+    BadRequest:
+      description: Bad request. Missing parameter(s) or invalid value(s).
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Errors"
+
+    Conflict:
+      description: Conflict. Same field(s) already set in database.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Errors"
+
+    Unauthorized:
+      description: Unauthorized. The authentication process failed.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Errors"
+
+    Forbidden:
+      description: Access denied. The credentials do not give access to this resource.
+      content:
+        application/json:
+          schema:
+            $ref: "#components/schemas/Errors"
+
+    UserNotFound:
+      description: Not Found. No user corresponding to the specified parameter exists in our database.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Errors"
+
+    RecordNotFound:
+      description: Not Found. No record corresponding to the specified parameter exists in our database.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Errors"
+
+    Created:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    $ref: "#components/schemas/PrimaryKey"
+
+    CreatedUser:
+      allOf:
+        - $ref: "#/components/responses/Created"
+        - description: Success. Id of the newly created user.
+
+    CreatedLanguage:
+      allOf:
+        - $ref: "#/components/responses/Created"
+        - description: Success. Id of the newly created language.
+
+    NoContent:
+      description: Success. An empty object.
+      content:
+        application/json:
+          schema:
+            type: object
+
+  securitySchemes:
+    BearerJWT:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

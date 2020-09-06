@@ -1,0 +1,23 @@
+
+@import "../../../styles/vars";
+@import "../../../styles/mixin";
+
+.follow {
+    
+    position: absolute;
+    bottom: 1.28em;
+    left: 2.9em;
+    min-width: 78px!important;
+
+    .ui.button.follow-unfollow {
+        @include button;
+        min-width: 78px!important;
+    }   
+
+    .ui.button.follow-follow {
+        color: $background-items !important;
+        transition: all 0.25s !important;
+        background-color: $primary-text-color!important;
+        min-width: 78px!important;
+    }
+}

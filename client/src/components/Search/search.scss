@@ -1,0 +1,72 @@
+@import "../../styles/vars";
+@import "../../styles/mixin";
+
+.search-input {
+    margin: $margin 0;
+    display: flex;
+    // background-color: blue;
+    justify-content: center;
+    align-items: center;
+    &-item {
+        flex: 1;
+        margin-right: 27px;
+        position: relative;
+        left: 13px;
+    }
+    &-button {
+        background-color: transparent !important;
+        color: black !important;
+        position: relative;
+        left: -10px;
+    }
+}
+
+.search-content--items {
+    @include flex-column;
+    align-items: center;
+    margin: 1em;
+    h1 {
+        margin: 20px 0 !important;
+    }
+}
+
+.search-tabs {
+    width: 100% !important;
+    border: 0 !important;
+
+    .ui.tabular.menu .item {
+        width: 33%;
+    }
+
+    .ui.tabular.menu .active.item {
+        color: #fe734c !important;
+        font-weight: 600;
+        background-color: #f5f4f4;
+    }
+
+    .ui.attached:not(.message)+.ui.attached.segment:not(.top) {
+        background-color: #f5f4f4;
+    }
+
+    .member-card {
+        border-top: none;
+        margin: 1em 0;
+        border-radius: 10px;
+        //box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2) !important;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) !important;
+    }
+    .tabpane-all > i{
+        font-size: 1em !important;
+        padding-left: 19px;
+        padding-right: 16px;
+
+    }
+}
+//     
+.search-container{
+    max-width: 100% !important;
+    .title {
+        padding-left: 1em;
+    }
+
+}

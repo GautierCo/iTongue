@@ -1,0 +1,10 @@
+node_modules/
+
+.env
+sqitch.conf
+
+data/create-db.sql
+
+temp/
+public/uploads/
+logs/access.log

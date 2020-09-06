@@ -1,0 +1,31 @@
+@import '../../styles/mixin';
+@import '../../styles/vars';
+
+.feed {
+    margin: 1em;
+    
+    &-title {
+        margin: 20px 0 !important;
+    }
+    &-list {
+
+    }
+
+    &-nofeed {
+        display: flex;
+        height: 180px;
+        flex-direction: column;
+        justify-content: space-around;
+        align-content: center;
+        align-items: center;
+    }
+
+    &-nofeed_text {
+        width: 250px;
+        text-align: center;
+    }
+
+    &-nofeed_button {
+        @include button;
+    }
+}

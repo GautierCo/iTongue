@@ -1,0 +1,27 @@
+@import '../../../styles/vars';
+
+.header-admin {
+    &.links {
+        display: block;
+        margin: auto!important;
+        font-size: 1.2em;
+        
+        &__item {
+            margin-right: 1em;
+        }
+    }
+
+    a {
+        color: $primary-text-color;
+    }
+}
+
+.ui.menu {
+    margin: 0;
+}
+
+.header-admin .active {
+    color: #FE724C;
+    font-weight: 600;
+}
+

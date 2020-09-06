@@ -1,0 +1,212 @@
+@import "../../styles/vars";
+@import "../../styles/mixin";
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Capriola&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+
+.pushable {
+  max-width: 992px;
+  margin: 0 auto;
+  background-color: $background-color !important;
+}
+
+.main-container {
+  max-height: 100vh;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .pushable > .pusher:after {
+    position: fixed;
+    height: 100vh !important;
+  }
+
+  .pushable > .pusher {
+    overflow: auto !important;
+    position: inherit !important;
+  }
+}
+
+.main {
+  max-height: 98vh;
+
+  &-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #f5f4f4;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    padding: 0 1.5rem;
+
+    .message-list {
+      padding: 0 1em;
+    }
+  }
+
+  .carousel,
+  .conversations,
+  .messages-container,
+  .user-profil,
+  #recording-widget {
+    margin: 0 -1.5rem;
+  }
+}
+
+#main-sidebar {
+  height: 100vh !important;
+  z-index: 1010;
+}
+
+// Liens sur le côté droits ( Login, Logout, etc ... )
+.header-nav {
+  @include flex-alignCenter;
+  padding: 2em 0.8em;
+  height: 54px;
+  border-bottom: 1px solid #f9ecec;
+  background-color: #ffffff !important;
+  top: 0;
+  width: 100%;
+
+  &__icon {
+    cursor: pointer;
+    color: #cac7c7;
+    font-size: 1.4em !important;
+  }
+
+  &__logo {
+    width: 120px;
+  }
+
+  .invisible {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
+  &__icon:hover {
+    color: $primary-color;
+  }
+
+  &__title {
+    margin: 0;
+    // font-family: "Righteous", cursive;
+    font-family: "Pacifico", cursive;
+    // font-family: "Gloria Hallelujah", cursive;
+    // font-family: "Acme", sans-serif;
+    // font-family: "Capriola", sans-serif;
+    letter-spacing: 0.12em;
+    font-size: 1.8em;
+    cursor: pointer;
+  }
+}
+
+.pushable {
+  //height: 94vh!important;
+  height: 100vh !important;
+  padding: 0 0 2em 0 !important;
+}
+
+.ui.sidebar {
+  height: 88% !important;
+}
+
+.main-header-links {
+  height: 97% !important;
+  align-items: flex-start;
+  text-align: left;
+
+  @include flex-column;
+  justify-content: space-between;
+
+  .container {
+    @include flex-column;
+  }
+
+  .first-container {
+    margin-top: 35px;
+  }
+
+  &__burger {
+    position: absolute;
+    right: 2.5px;
+    top: 5px;
+    padding: 10px;
+  }
+
+  &__item {
+    padding: 15px;
+    color: $primary-text-color;
+    position: relative;
+    &:after {
+      position: absolute;
+      transition: all 0.3s;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 3px;
+      content: ".";
+      color: transparent;
+      background: $primary-color;
+      height: 0%;
+    }
+
+    &:hover,
+    &.active {
+      color: $primary-color;
+    }
+
+    &:hover::after,
+    &.active::after {
+      height: 100%;
+    }
+  }
+}
+
+.navigationBottom {
+  padding: $padding;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // position: fixed;
+  width: 100%;
+  // bottom: 0;
+  border-top: 1px solid #f9ecec;
+  background-color: $background-items;
+  z-index: 10;
+  // margin-top: 100px !important;
+
+  &-items {
+    margin-left: 10px !important;
+    font-size: 1.4em !important;
+  }
+}
+
+.active-navbottom {
+  color: $primary-color !important;
+  cursor: pointer;
+
+  .i.big.icon {
+    color: $primary-color !important;
+  }
+}
+
+.message_dot {
+  position: relative;
+
+  &__label {
+    position: absolute;
+    right: -4px;
+    bottom: 10px;
+  }
+  .ui.label,
+  .ui.labels .label {
+    font-size: 0.657143rem;
+  }
+}

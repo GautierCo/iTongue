@@ -1,0 +1,52 @@
+{
+  "ludovic": {
+    "name": "Ludovic Courbin",
+    "firstname": "ludovic",
+    "picture": "https://itongue.s3.eu-west-3.amazonaws.com/uploads/avatars/5/6/5/7/aa0d3e447aac8a32fb8c3ae0a52c?v=1598967009884",
+    "desc": "A la tête de cette aventure iTongue, Ludovic vit la vie à fond, il ne s'arrête jamais.",
+    "location": "Pau, Aquitaine",
+    "spe": "Product Owner / Front-end",
+    "github": "https://github.com/ludocourbin",
+    "linkedin": "https://www.linkedin.com/in/ludoviccourbin/"
+  },
+  "sacha": {
+    "name": "Sacha Zacaropoulos",
+    "firstname": "sacha",
+    "picture": "https://media-exp1.licdn.com/dms/image/C5603AQGqAXcak7nJwQ/profile-displayphoto-shrink_400_400/0?e=1603929600&v=beta&t=bL6B29ZibHWkKpI2oM8nRRWKeewfdJzjNPxPkWxjnS0",
+    "desc": "Maître lunetier, Sacha voit plus loin que l'être humain lambda.",
+    "location": "Nice, PACA",
+    "spe": "Git master / Back-end",
+    "github": "https://github.com/sacha-smz",
+    "linkedin": "https://www.linkedin.com/in/sacha-zacaropoulos/"
+  },
+  "quentin": {
+    "name": "Quentin Lemogodeuc",
+    "firstname": "quentin",
+    "picture": "https://media-exp1.licdn.com/dms/image/C4E03AQGkvnlOcZm7nA/profile-displayphoto-shrink_400_400/0?e=1603929600&v=beta&t=no4zBOPgEux8I0eZaUFu1JdzrhAY4fdtbz3gRBhB-IM",
+    "desc": "Maitre guitariste, Quentin est bohémien.",
+    "location": "Bordeaux, Aquitaine",
+    "spe": "Lead dev Back-end",
+    "github": "https://github.com/Lemogodeuc",
+    "linkedin": "https://www.linkedin.com/in/lemogodeuc/"
+  },
+  "gautier": {
+    "name": "Gautier Colasse",
+    "firstname": "gautier",
+    "picture": "https://itongue.s3.eu-west-3.amazonaws.com/uploads/avatars/9/e/8/3/1f5e7a08b34c5d49a68544a78bcc?v=1598598733917",
+    "desc": "Amateur de motos des bois, Gautier n'a pas froid aux yeux.",
+    "location": "Lille, Hauts-de-France",
+    "spe": "Lead dev Front-end",
+    "github": "https://github.com/GautierCo",
+    "linkedin": "https://www.linkedin.com/in/gautier-colasse/"
+  },
+  "axel": {
+    "name": "Axel Le Boucher",
+    "firstname": "axel",
+    "picture": "https://media-exp1.licdn.com/dms/image/C4D03AQESNZlLPJ0_yQ/profile-displayphoto-shrink_400_400/0?e=1603929600&v=beta&t=2vuvNJidAV1t7bccoxhTbqyBU8I6aOExOrvcDGhJr08",
+    "desc": "Axel est un petit chenapan, il n'hésite jamais à faire une petite blague.",
+    "location": "Tours, Centre Val-de-Loire",
+    "spe": "Scrum master, Front-end",
+    "github": "https://github.com/LBAxel",
+    "linkedin": "https://www.linkedin.com/in/lbaxel/"
+  }
+}

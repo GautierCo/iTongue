@@ -1,0 +1,51 @@
+@import '../../../styles/vars';
+
+.home-admin {
+    height: 92vh;
+    background-color: $background-color;
+    padding: 4em;
+
+    &_container {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+
+        &.stats-left {
+            width: 47%;
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            border-top: 0;
+        }
+
+        &.stats-right {
+            width: 47%;
+            height: 40vh;
+        }
+    }
+
+    .ui .statistic .label {
+        color: $primary-color;
+    }
+    
+    .ui .statistic .value {
+        color: $primary-text-color;
+    }
+
+    .segment {
+        border-radius: 12px;
+        background-color: $shape-color;
+        border: 0;
+    }
+
+    .ui.segment:first-child {
+        margin-top: 1em!important;
+    }
+    
+    .ui.segment:last-child {
+        margin-bottom: 1em!important;
+    }
+}

@@ -1,0 +1,21 @@
+%syntax-version=1.0.0
+%project=itongue
+%uri=https://itongue.io/
+
+100-initial-migration 2020-08-16T05:39:23Z sacha-smz <sacha.zacaropoulos@gmail.com> # Création des tables initiales
+200-functions-user 2020-08-17T15:36:55Z sacha-smz <sacha.zacaropoulos@gmail.com> # Request complexity SQL side for user
+201-views-expressions 2020-08-18T12:06:49Z sacha-smz <sacha.zacaropoulos@gmail.com> # Display of expressions with translations
+202-function-search 2020-08-19T15:29:10Z Quentin Lemogodeuc <quentin@MacBook.local> # Create function to query in many relations
+203-functions-translation 2020-08-21T08:21:06Z Quentin Lemogodeuc <quentin@MacBook.local> # Migration for translation datamapper
+204-function-language 2020-08-24T08:22:50Z Quentin Lemogodeuc <quentin@MacBook.local> # Function to update one language
+300-view-dashboard 2020-08-24T10:30:00Z sacha-smz <sacha.zacaropoulos@gmail.com> # Admin dashboard view
+400-functions-highlights 2020-08-25T08:57:59Z Quentin Lemogodeuc <q.lemogodeuc@gmail.com> # The view serves datas for the home page
+500-tables-follow-userLike 2020-08-28T08:09:29Z Quentin Lemogodeuc <q.lemogodeuc@gmail.com> # Create tables M2M user-follow, record-like
+501-add-subscription-counts-to-user-display 2020-08-29T08:24:35Z sacha-smz <sacha.zacaropoulos@gmail.com> # Adds followers count and followed count to user display
+502-add-where-clause-generator-function 2020-08-30T08:27:51Z sacha-smz <sacha.zacaropoulos@gmail.com> # Adds a function generationg dynamic SQL WHERE clause
+503-constraints-and-indexes 2020-08-30T14:44:31Z sacha-smz <sacha.zacaropoulos@gmail.com> # Adding constraints and indexes on existing tables and views
+600-create-tables-comments-like-fav 2020-08-31T13:32:09Z Quentin Lemogodeuc <q.lemogodeuc@gmail.com> # Create tables for commenting liking and adding records to favs
+601-record-likes-related-updates 2020-08-31T15:08:33Z sacha-smz <sacha.zacaropoulos@gmail.com> # Function updates related to the new record like feature
+602-functions-comment 2020-08-31T16:02:27Z Quentin Lemogodeuc <q.lemogodeuc@gmail.com> # Add functions to retrieve comments
+603-last-irecords 2020-09-01T15:30:32Z Quentin Lemogodeuc <q.lemogodeuc@gmail.com> # drop function add view
+700-table-functions-chat 2020-09-01T11:52:31Z sacha-smz <sacha.zacaropoulos@gmail.com> # Tables and functions required by the instant messaging feature
