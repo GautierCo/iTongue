@@ -6,7 +6,9 @@ iTongue est un réseau social permettant d'apprendre les expressions les plus co
 
 Notre dernier mois de formation a été consacré entièrement à la création de ce projet, ce fût une expérience très intense, mais très enrichissante. J'ai appris à travailler en équipe, et développer mes compétences.
 
-Pour accéder à la vidéo de présentation rendez-vous sur : [Youtube](https://www.youtube.com/watch?v=gFhX1y1v8GQ&t=1s)
+Accéder à la vidéo de présentation rendez-vous sur : [Youtube](https://www.youtube.com/watch?v=gFhX1y1v8GQ&t=1s)
+
+Accéder au site en ligne: [iTongue.io](https://itongue.io/)
 
 Linkedin 👉 https://www.linkedin.com/in/gautier-colasse/
 
