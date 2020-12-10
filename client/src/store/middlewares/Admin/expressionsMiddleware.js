@@ -65,6 +65,7 @@ const expressionsMiddleware = (store) => (next) => (action) => {
             }, store)
                 .then((res) => {
                     store.dispatch(fetchExpressionSuccess(res.data.data));
+                    console.log("Expressions: ", res.data);
                 })
                 .catch((err) => {
                     store.dispatch(fetchExpressionError(/* Todo */));
@@ -114,9 +115,11 @@ const expressionsMiddleware = (store) => (next) => (action) => {
                 data: { ...objData },
             }, store)
                 .then((res) => {
+                    console.log(res)
                     store.dispatch(
                         addExpressionSubmitSuccess({
                             ...res.data.data,
+                            ...objData,
                             translations: [],
                         })
                     );

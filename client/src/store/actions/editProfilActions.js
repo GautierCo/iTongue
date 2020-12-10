@@ -36,9 +36,8 @@ export const editProfilAvatarSuccess = (payload) => ({
     payload
 });
 
-export const editProfilAvatarError = (payload) => ({
+export const editProfilAvatarError = () => ({
     type: EDIT_PROFIL_AVATAR_ERROR,
-    payload
 });
 
 export const EDIT_PROFIL_SLUG = "EDIT_PROFIL_SLUG";

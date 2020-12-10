@@ -23,11 +23,12 @@
 
     .fullname {
         margin-bottom: 0;
-        font-size: 1.2em!important;
+        font-size: 1.2em !important;
     }
 
     .avatar {
         margin-left: 10px;
+        height: 35px !important;
     }
 
     .records {
@@ -46,7 +47,7 @@
     display: block;
     padding: 0.3em;
     background-color: #ffffff;
-    max-width: 32px!important;
+    max-width: 32px !important;
     max-height: 35px;
     border-radius: 50%;
-  }
+}

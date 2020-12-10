@@ -16,6 +16,7 @@ import {
     editProfilError,
     EDIT_PROFIL_AVATAR,
     editProfilAvatarSuccess,
+    editProfilAvatarError,
     EDIT_PROFIL_SLUG,
     editProfilSlugSuccess,
     editProfilSlugError,
@@ -157,10 +158,17 @@ export const usersMiddleware = (store) => (next) => (action) => {
         }
 
         case EDIT_PROFIL_AVATAR: {
+
+            if( (action.payload.type != "image/jpeg") && (action.payload.type != "image/png") ) {
+                store.dispatch(editProfilAvatarError());
+                toast.warning("Votre image n'est pas au bon format");
+                break;
+            }
+
             const { currentUser } = store.getState().user;
             const formData = new FormData();
             formData.append("avatar", action.payload);
-
+            
             httpClient
                 .post(
                     {
@@ -173,14 +181,12 @@ export const usersMiddleware = (store) => (next) => (action) => {
                     store
                 )
                 .then((res) => {
-                    const responseAvatarUrl = `${
-                        res.data.data.avatarUrl
-                    }?v=${Date.now()}`;
-                    // const newAvatarUrl = `${process.env.REACT_APP_API_URL}/${responseAvatarUrl}`;
+                    const responseAvatarUrl = `${res.data.data.avatarUrl}?v=${Date.now()}`;
                     store.dispatch(editProfilAvatarSuccess(responseAvatarUrl));
                 })
                 .catch((err) => {
                     console.error(err);
+                    store.dispatch(editProfilAvatarError());
                 });
             break;
         }

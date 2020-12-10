@@ -5,6 +5,8 @@ import { Icon, Form, Table, Segment, Header, Confirm } from 'semantic-ui-react';
 
 const ExpressionsList = ( props ) => {
 
+    console.log(props);
+
     const {
         fetchExpression, 
         newExpressionInputValue, 

@@ -333,9 +333,9 @@ import {
       case EDIT_PROFIL_AVATAR:
         return {
           ...state,
-          userSlugInfos: {
-            ...state.userSlugInfos,
-          },
+          // userSlugInfos: {
+          //   ...state.userSlugInfos,
+          // },
           editProfilAvatarLoading: true,
         };
       case EDIT_PROFIL_AVATAR_SUCCESS:

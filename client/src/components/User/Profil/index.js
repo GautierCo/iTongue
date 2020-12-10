@@ -128,7 +128,6 @@ const UserProfil = (props) => {
                   avatarUrl={avatarUrl}
                   isUserAccount={isUserAccount}
                   editProfilAvatar={editProfilAvatar}
-                  checkUserSlugLoading={checkUserSlugLoading}
                 />
               )}
             </div>

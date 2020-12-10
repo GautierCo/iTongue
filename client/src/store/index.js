@@ -23,7 +23,7 @@ const persistConfig = {
     whitelist: ["user", "loginAdminReducer", "likeAndFavorisReducer"],
     storage, // define which storage to use
 };
-// "irecords"
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const enhancers = composeEnhancers(
